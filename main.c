@@ -160,7 +160,7 @@ int main(void)
 		if (-1==InsertFailCollision(hashtable,sizeof(Customer),TABLESIZE,
 									key,&customers[i],MultMethod))
 		{
-			printf("*** Insert failed ***\n");
+			//printf("*** Insert failed ***\n");
 		}
 	}
 
@@ -195,12 +195,15 @@ int main(void)
 	for (int i=0;i<CUSTCOUNT;i++)
 	{
 		int key = Getkey(customers[i]);
+		//printf("Inserting key=%d\n",key);
 		if (-1==InsertChain(newtable,sizeof(Customer),TABLESIZE,
 									key,&customers[i],MultMethod))
 		{
 			//printf("*** Insert failed ***\n");
 		}
 	}
+
+	//PrintChainTable(newtable);
 
 	// See if we can find the customers
 	countFound=0;
@@ -223,4 +226,6 @@ int main(void)
 	printf("******* Found %d, Not Found %d *******\n",countFound,countNotFound);
 
 	//PrintCustomers(hashtable,CUSTCOUNT);
+
+	FreeChainTable(newtable);
 }
