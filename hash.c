@@ -20,12 +20,14 @@ void * SearchNoCollision(void * hashtable, int key, int elementSize, int (*HashF
 
 int DivMethod(int key)
 {
-	return 0;
+	int hash = key%7;
+	return hash;
 }
 
 int MultMethod(int key)
 {
-    return 0;
+	int hash = floor(7*((key*0.7)%1))
+    return hash;
 }
 
 
