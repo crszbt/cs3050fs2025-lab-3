@@ -14,19 +14,21 @@ int InsertFailCollision(	void * hashtable, int elementSize, int elementCountMax,
 
 void * SearchNoCollision(void * hashtable, int key, int elementSize, int (*HashFunc)(int key))
 {
+	
     return NULL;
 }
 
 
 int DivMethod(int key)
 {
-	int hash = key%7;
+	int hash = key%13;
 	return hash;
 }
 
 int MultMethod(int key)
 {
-	int hash = floor(7*((key*0.7)%1))
+	double a = 0.6180339887
+	int hash = 128*((key*a)-(int)(key*a));
     return hash;
 }
 
@@ -38,6 +40,7 @@ void * AllocateChainTable(int elementCountMax)
 
 void FreeChainTable(void * hashtable)
 {
+	
 }
 
 int InsertChain(	void * hashtable, int elementSize, int elementCountMax,
@@ -48,5 +51,6 @@ int InsertChain(	void * hashtable, int elementSize, int elementCountMax,
 
 void * SearchChain(void * hashtable, int key, int elementSize, int (*HashFunc)(int key))
 {
+	
     return NULL;
 }
