@@ -61,7 +61,12 @@ void * AllocateChainTable(int elementCountMax)
 
 void FreeChainTable(void * hashtable)
 {
-	
+	void * nexthash = hashtable->next; //creates pointer to the next hash down the chain
+	if(nexthash!=NULL)
+	{
+		FreeChainTable(nexthash); //frees next hash
+	}
+	free(hashtable); //frees current hash;
 }
 
 int InsertChain(	void * hashtable, int elementSize, int elementCountMax,
