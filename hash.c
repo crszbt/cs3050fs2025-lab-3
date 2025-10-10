@@ -9,7 +9,7 @@
 int InsertFailCollision(	void * hashtable, int elementSize, int elementCountMax,
                             int key, void * element, int (*HashFunc)(int key))
 {
-	//for some reason, all keys turn to 0 at this point
+	//for some reason, all keys turn to 0 at this point in testing
 	int hash = HashFunc(key); //gets the hash based on the inputted key
 	void* testmem;
 	testmem = calloc(1,elementSize); //creates an empty memory space to compare the hashes to
